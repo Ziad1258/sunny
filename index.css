@@ -79,7 +79,7 @@ body {
 .weatherBox.active {
   transform: scale(1);
   opacity: 1;
-  height: 480px;
+  min-height: 480px;
 }
 .weatherImage {
   width: 150px;

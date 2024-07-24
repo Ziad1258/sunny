@@ -28,8 +28,7 @@ async function fetchWeatherData(city) {
     return null;
   }
 }
-
-searchButton.addEventListener("click", () => {
+const handleClick = () => {
   active = true;
 
   active
@@ -43,7 +42,16 @@ searchButton.addEventListener("click", () => {
   } else {
     handleError();
   }
-});
+}
+
+searchButton.addEventListener("click" , handleClick)
+
+searchInput.addEventListener("keydown" , (e) => {
+  if (e.key === "Enter") {
+    handleClick();
+  }
+})
+
 
 function addInfoToElement(data) {
   const { current, location } = data;
